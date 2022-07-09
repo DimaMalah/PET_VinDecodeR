@@ -9,7 +9,11 @@ function Main(props) {
 	const [vin, setVin] = useState("")
 
 
-	function getVin(vin) { return setVin(vin) }
+	function getVin(vin) {
+		setVin(vin)
+		// setVinUp(vin)
+	}
+	// function setVinUp(vin) { return props.vin(vin) }
 	return (
 
 		<main className="main__wrapper">

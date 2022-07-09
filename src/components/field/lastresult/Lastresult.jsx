@@ -10,13 +10,13 @@ function Lastresult(props) {
 
 			return <ul className="lastresult__list">
 				{data.filter(item => (item != null)).map(item => (
-					<li className="lastresult__item" >
+					<li className="lastresult__item" key={item["id"]}>
 						<span className="lastresult__vincode">{item['vincode']}</span>
 						<a href="#" className="lastresult__link">
 							{<>
-								<span className="lastresult__link_brand">{item['brand']}</span>
-								<span className="lastresult__link_model">{item['model']}</span>
-								<span className="lastresult__link_year">{item['year']}</span>
+								<span className="lastresult__link_brand" >{item['brand']}</span>
+								<span className="lastresult__link_model" > {item['model']}</span>
+								<span className="lastresult__link_year" >{item['year']}</span>
 							</>}
 						</a>
 					</li>

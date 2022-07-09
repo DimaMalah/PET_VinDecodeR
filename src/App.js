@@ -1,24 +1,27 @@
 
 import './App.css';
-import Container from './components/container/Container';
-import { Routes, Route, Link } from "react-router-dom";
-import Main from './components/main/Main';
-import { Layout } from './components/layout';
-import Header from './components/header/Header';
-import Footer from './components/footer/Footer';
+import { Routes, Route } from "react-router-dom";
+import { MainPage } from "./pages/mainPage.jsx";
+import { VariablesPage } from "./pages/variablesPage";
+import { NotFoundPage } from "./pages/NotFoundPage";
+import { Layout } from './components/Layout';
 
 function App() {
 	return (
 
-		<div className='wrapper'>
-			<Header />
-			<Main />
-			<Footer>Malakhovskyi Dmytro Inc.</Footer>
-		</div>
+		<Routes>
+
+			<Route path="/" element={<Layout />}>
+				<Route index element={<MainPage />} />
+				<Route path="variables" element={<VariablesPage />} />
+				<Route path="*" element={<NotFoundPage />} />
+			</Route>
 
 
+		</Routes>
 
-	);
+
+	)
 }
 
 export default App;

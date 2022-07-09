@@ -5,3 +5,4 @@ function MainPage() {
 		<Main />
 	)
 }
+export { MainPage }
