@@ -1,0 +1,39 @@
+.form{
+	display: flex;
+	justify-content: center;
+	margin: 50px auto 0;
+}
+.form__input{
+	min-width: 45%;
+	padding: 5px 5px 5px 15px;
+	background-color: rgb(255, 255, 255);
+	font-size: 30px;
+	border: 2px solid rgb(109, 109, 109, 0.5);
+	border-radius: 4px;
+	letter-spacing: 3px;
+}
+.form__input:invalid {
+	border-color: red;
+}
+ 
+/*---------------- красиво исчезающий placeholder --------------------*/
+.form__input::-webkit-input-placeholder       {opacity: 1; transition: opacity 0.3s ease;}
+.form__input::-moz-placeholder                {opacity: 1; transition: opacity 0.3s ease;}
+.form__input:-moz-placeholder                 {opacity: 1; transition: opacity 0.3s ease;}
+.form__input:-ms-input-placeholder            {opacity: 1; transition: opacity 0.3s ease;}
+.form__input:focus::-webkit-input-placeholder {opacity: 0; transition: opacity 0.3s ease;}
+.form__input:focus::-moz-placeholder          {opacity: 0; transition: opacity 0.3s ease;}
+.form__input:focus:-moz-placeholder           {opacity: 0; transition: opacity 0.3s ease;}
+.form__input:focus:-ms-input-placeholder      {opacity: 0; transition: opacity 0.3s ease;}
+/* --------------------------------------------------------------------- */
+
+.form__btn{
+	background: linear-gradient(#6acd6e,#00911c);
+	border-radius: 4px;
+	min-width: 15%;
+	color: rgb(255, 255, 255);
+	font-family: sans-serif;
+	font-size: 20px;
+	padding: 0 15px;
+	margin-left: 5px;
+}

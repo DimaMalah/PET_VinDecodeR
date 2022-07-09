@@ -1,0 +1,47 @@
+.lastresult__list{
+	display: flex;
+	flex-direction: column;
+	width: 25%;
+	padding-right: 5px;
+}
+.lastresult__link{
+	min-width:100%;
+   color: inherit;
+   display: flex;
+	justify-content: space-between;
+	flex-wrap: wrap;
+   line-height: 20px;
+   padding: 9px 0;
+    
+}
+
+.lastresult__item {
+	display: flex;
+	flex-direction: column;
+	border: 1px solid transparent;
+	border-bottom: ridge rgb(133, 133, 133);
+}
+.lastresult__item:first-child{
+	border-top: ridge rgb(133, 133, 133);
+}
+.lastresult__link_brand{
+	display: block;
+	font-size: 16px;
+	font-weight: 600;
+	letter-spacing: 3px;
+}
+.lastresult__link_model{
+	display: block;
+	font-size: 22px;
+	margin: auto 10px;
+}
+.lastresult__link_year{
+	display: block;
+	font-size: 16px;
+}
+.lastresult__vincode{
+	font-size: 10px;
+	letter-spacing: 4px;
+	align-self: center;
+	color: rgb(255, 0, 0);
+}

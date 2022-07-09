@@ -1,0 +1,17 @@
+.footer{
+	background-color: rgb(148, 148, 148);
+	min-height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.footer__text{
+	letter-spacing: 5px;
+	color: white;
+	font-size: 16px;
+	text-decoration-line: overline;
+	text-shadow:3px -1px 2px black, 5px -3px 1em white, 2px -1px 0.2em white;
+}
+
+
+	
