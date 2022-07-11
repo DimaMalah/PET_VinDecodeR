@@ -6,19 +6,27 @@ import Form from "../form/Form.jsx"
 
 
 function Main(props) {
+	const { infoCar } = props
 	const [vin, setVin] = useState("")
 
 
 	function getVin(vin) {
-		setVin(vin)
-		// setVinUp(vin)
+		return setVin(vin)
 	}
-	// function setVinUp(vin) { return props.vin(vin) }
+
+	// useEffect(() => { infoCar(vin) })
+
+	// function getVinFromLastResltTablet(vinFromInput, vinFromTablet) {
+	// 	if (vinFromInput) return infoCar(vinFromInput)
+	// 	if (vinFromTablet) return infoCar(vinFromTablet)
+	// }
+
+
 	return (
 
 		<main className="main__wrapper">
 			<Form vin={getVin} />
-			<Field vin={vin} />
+			<Field vin={vin} infoCar={infoCar} />
 		</main>
 
 

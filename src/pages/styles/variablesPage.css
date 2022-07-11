@@ -1,0 +1,23 @@
+.variables-page{
+	display: inline-flex;
+	flex-direction: column;
+	align-content: flex-end;
+	justify-content: flex-end;
+
+}
+.variables-page__option-title::first-line{
+	min-width: 100%;
+	color: rgb(0, 69, 129);
+	font-size: 16px;
+	font-weight: 700;
+	text-decoration: underline;
+	text-align: center;
+}
+.variables-page__option-description{
+	margin: 5px 0 10px;
+	text-align: center;
+	font-size: 12px;
+	font-weight: 500;
+	color: black;
+	
+}

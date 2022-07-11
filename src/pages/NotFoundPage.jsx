@@ -2,7 +2,7 @@
 
 function NotFoundPage() {
 	const style = {
-		"min-height": "200px",
+		"minHeight": "200px",
 		"fontWeight": 500,
 		"fontFamily": "Montserrat,sans-serif",
 		"fontSize": "14px",
