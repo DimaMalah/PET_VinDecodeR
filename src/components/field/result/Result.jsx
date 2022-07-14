@@ -3,17 +3,21 @@ import "./result.css"
 import { Link } from "react-router-dom"
 
 function Result(props) {
+	const { infoCar } = props //-->Field-->Main--->MainPage-->useState of App.js
+	const { setVin } = props //--vin from Form for render big tablet
+	const { lastVincode } = props //--vin from LastResult tablet
 
-	const { vin, lastVincode, infoCar } = props
-	const [vincode, setVincode] = useState("")
+	const [vincode, setVincode] = useState("") //----set here the vincode, came from <Form/>
 	const [brand, setBrand] = useState("")
 	const [model, setModel] = useState("")
 	const [year, setYear] = useState("")
 	const [error, setError] = useState("")
-	const [id, setId] = useState(0)
-	const [carInfo, setCarInfo] = useState("") //парметр для страницы variablePage
-	const DB_CARS = "saved_data"
-	const vinCode = vin || lastVincode
+	const [id, setId] = useState(0)//--id for setting to localStorage
+	const [carInfo, setCarInfo] = useState("") //---set here the json to sent up to <--variablesPage-->
+
+	const DB_CARS = "saved_data" //--for saving to localStorage
+	const vinCode = setVin
+
 
 	useEffect(() => {
 		if (vinCode) {
@@ -23,7 +27,7 @@ function Result(props) {
 				.then(response => response.json())
 				.then(json => json['Results'])
 				.then(results => { // этот параметр мы передадим на страницу variablesPage, спомощью след.  useEffect-а
-					setCarInfo(JSON.stringify(results))
+					setCarInfo(JSON.stringify(results))// all variables from Fetch
 					return results.filter((obj) => obj['Variable'] == 'Make' || obj['Variable'] == 'Model' || obj['Variable'] == 'Model Year')
 				})
 				.then(result => {
@@ -39,14 +43,14 @@ function Result(props) {
 	}, [vinCode])
 
 
-
-	function hendleClick() {
+	function handleClick() {
 		const carData = { "brand": brand, "model": model, "year": year, "id": id, "vincode": vinCode }
 		saveDataToLS(carData)
-		infoCar(carInfo)
+		infoCar(carInfo) //--> send it to App.js for render --<VariablesPage/>--
 		setVincode("")
 		setBrand("")
 	}
+
 
 	function saveDataToLS(obj) {
 		if (localStorage[DB_CARS]) {// если в localStorage уже что-то есть...
@@ -68,7 +72,7 @@ function Result(props) {
 	function validation(data, checkValue, startState) {
 		if (data && checkValue) {
 			console.log(1)
-			return <Link to={"/variables"} href="#" onClick={hendleClick} className="result__tablet-active">
+			return <Link to={"/variables"} href="#" onClick={handleClick} className="result__tablet-active">
 				<div className="result__text">
 					<span className="result__text-brand">{brand}</span>
 					<span className="result__text-model">{model}</span>
@@ -96,16 +100,15 @@ function Result(props) {
 
 	}
 
+
 	function renderEmptyTablet() {
 		return <div className="result__tablet-nonactive">{ }</div>
 	}
 
+
 	return (
 		validation(brand, vincode, renderEmptyTablet())
-
-
-
-
 	)
 }
+
 export default Result

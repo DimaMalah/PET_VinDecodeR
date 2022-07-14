@@ -7,11 +7,12 @@ import Container from "../container/Container"
 function Form(props) {
 
 	const [inputValue, setInputValue] = useState("")
+	const { getVinFromForm } = props
 
 
 	function onSubmitHandler(e) {
 		e.preventDefault()
-		props.vin(inputValue)
+		getVinFromForm(inputValue)
 		setInputValue("");
 	}
 

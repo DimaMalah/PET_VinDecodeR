@@ -6,8 +6,7 @@
 
 }
 .variables-page__option-title::first-line{
-	min-width: 100%;
-	color: rgb(0, 69, 129);
+	color: rgb(0, 72, 136);
 	font-size: 16px;
 	font-weight: 700;
 	text-decoration: underline;

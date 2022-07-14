@@ -9,7 +9,7 @@ import { Layout } from './components/Layout';
 
 function App() {
 
-	const [infoCar, setInfoCar] = useState("")
+	const [infoCar, setInfoCar] = useState("") //--> Came from-->Result
 	function getInfo(arr) { return setInfoCar(`${arr}`) }
 
 
