@@ -5,13 +5,10 @@ import { Link } from "react-router-dom"
 
 
 function VariablesPage(props) {
-	const { infoCar } = props //<---array (fetch) from --Result--
-	// const [json, setJson] = useState("")
+	const { infoCar } = props //<---vincode  from --Result--
 
-
-
-	function renderItem(arr) {
-		return arr.filter(item => (item["Value"]) && item["Value"] !== "null").map(item =>
+	function renderItem(json) {
+		return json.filter(item => (item["Value"]) && item["Value"] !== "null").map(item =>
 			<Link to={`variables/${item["VariableId"]}`} key={item["VariableId"]}>
 				<ul className="variables-page__option-title" key={item["VariableId"]}>{item["Variable"]}
 					<li className="variables-page__option-description" >{item["Value"]}</li>
@@ -22,8 +19,10 @@ function VariablesPage(props) {
 	}
 
 	return (
+
 		<Container className="variables-page">
-			{renderItem(JSON.parse(infoCar))}
+			{renderItem((infoCar))}
+			{console.log(infoCar)}
 		</Container>
 	)
 }

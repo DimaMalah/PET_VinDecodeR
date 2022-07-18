@@ -20,7 +20,6 @@ function Form(props) {
 		setInputValue(e.target.value.toUpperCase())
 	}
 
-
 	return (
 		<Container>
 			<form onSubmit={onSubmitHandler} className="form">

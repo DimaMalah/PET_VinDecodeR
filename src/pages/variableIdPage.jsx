@@ -1,0 +1,11 @@
+
+
+function VariableIdPage() {
+
+
+	return (
+		<>
+
+		</>
+	)
+}

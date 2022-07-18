@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from "react"
 import "./result.css"
-import { Link } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 function Result(props) {
 	const { infoCar } = props //-->Field-->Main--->MainPage-->useState of App.js
 	const { setVin } = props //--vin from Form for render big tablet
-	const { lastVincode } = props //--vin from LastResult tablet
 
+	let navigate = useNavigate()
 	const [vincode, setVincode] = useState("") //----set here the vincode, came from <Form/>
 	const [brand, setBrand] = useState("")
 	const [model, setModel] = useState("")
@@ -26,8 +26,9 @@ function Result(props) {
 			fetch(`https://vpic.nhtsa.dot.gov/api/vehicles/decodevin/${vinCode}?format=json `)
 				.then(response => response.json())
 				.then(json => json['Results'])
-				.then(results => { // этот параметр мы передадим на страницу variablesPage, спомощью след.  useEffect-а
-					setCarInfo(JSON.stringify(results))// all variables from Fetch
+				.then(results => {
+					JSON.stringify(results)
+					setCarInfo(JSON.stringify(results))//---set all variables from Fetch to useState (carInfo)
 					return results.filter((obj) => obj['Variable'] == 'Make' || obj['Variable'] == 'Model' || obj['Variable'] == 'Model Year')
 				})
 				.then(result => {
@@ -38,7 +39,7 @@ function Result(props) {
 						setId(id + 1)
 					}
 				})
-				.catch(err => setError(`${err}`))
+				.catch(err => setError(err))
 		}
 	}, [vinCode])
 
@@ -46,9 +47,10 @@ function Result(props) {
 	function handleClick() {
 		const carData = { "brand": brand, "model": model, "year": year, "id": id, "vincode": vinCode }
 		saveDataToLS(carData)
-		infoCar(carInfo) //--> send it to App.js for render --<VariablesPage/>--
+		infoCar(JSON.parse(carInfo)) //--> send it to App.js for render --<VariablesPage/>--
 		setVincode("")
 		setBrand("")
+		setTimeout(() => navigate("/variables"), 0)
 	}
 
 
@@ -71,40 +73,37 @@ function Result(props) {
 
 	function validation(data, checkValue, startState) {
 		if (data && checkValue) {
-			console.log(1)
-			return <Link to={"/variables"} href="#" onClick={handleClick} className="result__tablet-active">
+			// console.log(1)
+			return <a href="#" onClick={handleClick} className="result__tablet-active">
 				<div className="result__text">
 					<span className="result__text-brand">{brand}</span>
 					<span className="result__text-model">{model}</span>
 					<span className="result__text-year">{year}</span>
 				</div>
-			</Link >
+			</a >
 		} else if (checkValue && !data && !error) {
-			console.log(2)
+			// console.log(2)
 			return <div className="result__tablet-nonactive">
 				<div className="result__text">
 					<span className="result__text-error">Sorry, there's no such car in our catalog!</span>
 				</div>
 			</div>
 		} else if (error) {
-			console.log(3)
+			// console.log(3)
 			return <div className="result__tablet-nonactive">
 				<div className="result__text">
 					<span className="result__text-error">Error: Something went wrong...Please, check your internet cinnection and try again.</span>
 				</div>
 			</div>
 		} else {
-			console.log(4);
+			// console.log(4);
 			return startState
 		};
-
 	}
-
 
 	function renderEmptyTablet() {
 		return <div className="result__tablet-nonactive">{ }</div>
 	}
-
 
 	return (
 		validation(brand, vincode, renderEmptyTablet())

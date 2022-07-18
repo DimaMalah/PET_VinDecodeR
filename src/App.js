@@ -9,8 +9,9 @@ import { Layout } from './components/Layout';
 
 function App() {
 
-	const [infoCar, setInfoCar] = useState("") //--> Came from-->Result
-	function getInfo(arr) { return setInfoCar(`${arr}`) }
+	const [infoCar, setInfoCar] = useState("") //--> vincode, Came from-->Result
+
+	function getInfo(vin) { return setInfoCar(vin) }
 
 
 

@@ -12,22 +12,17 @@ function Field(props) {
 	const [jsonResult, setJsonResult] = useState("") //-----------------(-----Result-----)
 	const [jsonLastResult, setJsonLastResult] = useState("") //----------------------(-----LastResult-----)
 
-
-	function jsonResultFunc(json) { // --- set the JSON from big tablet (-----Result-----)
-		return setJsonResult(json)
+	function jsonResultFunc(arr) { // --- set the JSON from big tablet (-----Result-----)
+		return setJsonResult(arr)
 	}
 
-	function jsonLastResultFunc(json) { // --- set the JSON from small clicked tablet (-----LastResult-----)
-		return setJsonLastResult(json)
+	function jsonLastResultFunc(arr) { // --- set the vincode from small clicked tablet (-----LastResult-----)
+		return setJsonLastResult(arr)
 	}
 
-	function wichJson(result, lastResult) {
-		return infoCar(result || lastResult)
-	}
+	const json = jsonResult || jsonLastResult
 
-	useEffect(() => wichJson(jsonResult, jsonLastResult))
-
-
+	useEffect(() => infoCar(json))
 
 	return (
 		<Container className="field">
