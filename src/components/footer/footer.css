@@ -4,6 +4,7 @@
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-top: 20px;
 }
 .footer__text{
 	letter-spacing: 5px;
@@ -13,5 +14,11 @@
 	text-shadow:3px -1px 2px black, 5px -3px 1em white, 2px -1px 0.2em white;
 }
 
+@media (max-width:780px){
+	.footer__text{
+		letter-spacing: 3px;
+		font-size: 12px;
+	}
+}
 
 	

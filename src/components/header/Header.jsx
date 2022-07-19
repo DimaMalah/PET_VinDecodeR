@@ -18,7 +18,7 @@ function Header() {
 					<Container>
 						<ul className="nav__list">
 							<li className="nav__item"><Link to="/" className="nav__link">home</Link></li>
-							<li className="nav__item"><Link to="/variables" className="nav__link">car brands</Link></li>
+							<li className="nav__item"><Link to="/nav_menu" className="nav__link">nav menu</Link></li>
 							<li className="nav__item"><Link to="/some_menu" className="nav__link">some menu</Link></li>
 							<li className="nav__item"><Link to="/nav_menu" className="nav__link">nav menu</Link></li>
 						</ul>

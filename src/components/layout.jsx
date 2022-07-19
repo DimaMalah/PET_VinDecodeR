@@ -1,7 +1,6 @@
 import Header from "./header/Header";
 import Footer from "./footer/Footer";
 import React, { Outlet } from "react-router-dom";
-import { useState } from "react";
 
 function Layout() {
 

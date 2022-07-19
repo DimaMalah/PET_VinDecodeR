@@ -3,12 +3,10 @@ import "./form.css"
 import Container from "../container/Container"
 
 
-
 function Form(props) {
 
 	const [inputValue, setInputValue] = useState("")
 	const { getVinFromForm } = props
-
 
 	function onSubmitHandler(e) {
 		e.preventDefault()
