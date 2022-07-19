@@ -50,7 +50,7 @@ function Result(props) {
 		infoCar(JSON.parse(carInfo)) //--> send it to App.js for render --<VariablesPage/>--
 		setVincode("")
 		setBrand("")
-		setTimeout(() => navigate("/variables"), 0)
+		setTimeout(() => navigate("/PET_VinDecodeR/variables"), 0)
 	}
 
 

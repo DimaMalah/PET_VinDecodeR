@@ -35,7 +35,7 @@ function Lastresult(props) {
 			.then(results => JSON.stringify(results))
 			.then(results => getInfoCar(JSON.parse(results)))
 		setTargetVin(targetVincode)
-		setTimeout(() => navigate("/variables"), 0)
+		setTimeout(() => navigate("/PET_VinDecodeR/variables"), 0)
 	}
 
 	return (

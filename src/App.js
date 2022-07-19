@@ -23,9 +23,9 @@ function App() {
 		<Routes>
 			<Route path="/PET_VinDecodeR/" element={<Layout />}>
 				<Route index element={<MainPage infoCar={getInfo} />} />
-				<Route path="variables" element={<VariablesPage infoCar={infoCar} varId={setVariableId} />} />
-				<Route path="variables/:id" element={<VariableIdPage infoCar={infoCar} id={id} />} />
-				<Route path="*" element={<NotFoundPage />} />
+				<Route path="/PET_VinDecodeR/variables" element={<VariablesPage infoCar={infoCar} varId={setVariableId} />} />
+				<Route path="/PET_VinDecodeR/variables/:id" element={<VariableIdPage infoCar={infoCar} id={id} />} />
+				<Route path="/PET_VinDecodeR/*" element={<NotFoundPage />} />
 			</Route>
 		</Routes>
 	)
