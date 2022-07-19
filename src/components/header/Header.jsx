@@ -18,7 +18,7 @@ function Header() {
 					<Container>
 						<ul className="nav__list">
 							<li className="nav__item"><Link to="/PET_VinDecodeR/" className="nav__link">home</Link></li>
-							<li className="nav__item"><Link to="/PET_VinDecodeR/nav_menu" className="nav__link">nav menu</Link></li>
+							<li className="nav__item"><Link to="/PET_VinDecodeR/variables" className="nav__link">variables</Link></li>
 							<li className="nav__item"><Link to="/PET_VinDecodeR/some_menu" className="nav__link">some menu</Link></li>
 							<li className="nav__item"><Link to="/PET_VinDecodeR/nav_menu" className="nav__link">nav menu</Link></li>
 						</ul>
