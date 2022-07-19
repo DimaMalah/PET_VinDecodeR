@@ -1,14 +1,14 @@
 {
   "files": {
-    "main.css": "/PET_VinDecodeR/static/css/main.e12109b5.css",
-    "main.js": "/PET_VinDecodeR/static/js/main.bf61d18d.js",
+    "main.css": "/PET_VinDecodeR/static/css/main.3c620453.css",
+    "main.js": "/PET_VinDecodeR/static/js/main.b0560afc.js",
     "static/media/vin-decoder.svg": "/PET_VinDecodeR/static/media/vin-decoder.83e5dbba7d97a9af5c3fcd288cbf74e0.svg",
     "index.html": "/PET_VinDecodeR/index.html",
-    "main.e12109b5.css.map": "/PET_VinDecodeR/static/css/main.e12109b5.css.map",
-    "main.bf61d18d.js.map": "/PET_VinDecodeR/static/js/main.bf61d18d.js.map"
+    "main.3c620453.css.map": "/PET_VinDecodeR/static/css/main.3c620453.css.map",
+    "main.b0560afc.js.map": "/PET_VinDecodeR/static/js/main.b0560afc.js.map"
   },
   "entrypoints": [
-    "static/css/main.e12109b5.css",
-    "static/js/main.bf61d18d.js"
+    "static/css/main.3c620453.css",
+    "static/js/main.b0560afc.js"
   ]
 }
