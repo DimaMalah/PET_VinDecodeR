@@ -1,3 +1,4 @@
+import BackBTN from "../components/backBTN/backBTN"
 
 
 function NotFoundPage() {
@@ -15,12 +16,15 @@ function NotFoundPage() {
 		"lineHeight": "1.5em"
 	}
 	return (
-		<div className="not-found__text" style={style}>
-			<span>ДАННАЯ СТРАНИЦА НЕ НАЙДЕНА</span>
-			<span style={{ "fontWeight": 900, "fontSize": "45px", "color": "rgb(3 49 113)" }}>404</span>
-			<span>Выберите другую страницу</span>
+		<>
+			<BackBTN navigate="../"></BackBTN>
+			<div className="not-found__text" style={style}>
+				<span>ДАННАЯ СТРАНИЦА НЕ НАЙДЕНА</span>
+				<span style={{ "fontWeight": 900, "fontSize": "45px", "color": "rgb(3 49 113)" }}>404</span>
+				<span>Выберите другую страницу</span>
+			</div>
+		</>
 
-		</div>
 	)
 }
 

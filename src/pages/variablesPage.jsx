@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react"
 import Container from "../components/container/Container"
+import BackBTN from "../components/backBTN/backBTN"
 import "./styles/variablesPage.css"
 import { useNavigate } from "react-router-dom"
+
 
 
 function VariablesPage(props) {
@@ -27,10 +29,9 @@ function VariablesPage(props) {
 	}
 
 	return (
-
 		<Container className="variables-page">
+			<BackBTN navigate="../"></BackBTN>
 			{renderItem(infoCar)}
-			{/* {console.log(infoCar)} */}
 		</Container>
 	)
 }

@@ -1,4 +1,5 @@
 import Container from "../components/container/Container"
+import BackBTN from "../components/backBTN/backBTN"
 
 function VariableIdPage(props) {
 
@@ -6,7 +7,7 @@ function VariableIdPage(props) {
 	const style = {
 		backgroundColor: "#e0e0e0",
 		color: "black",
-		fontSize: "18px"
+		fontSize: "18px",
 	}
 
 
@@ -28,8 +29,12 @@ function VariableIdPage(props) {
 	}
 
 	return (
-		<Container className="variables-page" style={{ "minWidth": "40%" }}>
-			{renderItem(infoCar)}
+		<Container className="variables-page" style={{ justifyContent: "flex-start" }}>
+			<div className="variables-page">
+				<BackBTN navigate="/PET_VinDecodeR/variables"></BackBTN>
+				{renderItem(infoCar)}
+			</div>
+
 		</Container>
 	)
 }
