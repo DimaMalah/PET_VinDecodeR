@@ -13,6 +13,7 @@ function BackBTN(props) {
 		borderRadius: "5px",
 		backgroundColor: "#e1e1ff",
 		fontWeight: "500",
+		marginBottom: "20px"
 	}
 
 	const navigate = useNavigate()

@@ -7,4 +7,5 @@ function MainPage(props) {
 		<Main infoCar={infoCar} />
 	)
 }
+
 export { MainPage }

@@ -11,12 +11,19 @@ function VariablesPage(props) {
 	const { varId } = props
 	let navigate = useNavigate()
 
+
+	function filterValue(item) {
+		if (!item) return item = "-"
+		return item
+	}
+
 	function renderItem(json) {
-		return json.filter(item => (item["Value"]) && item["Value"] !== "null").map(item =>
+
+		return json.map(item =>
 			<a href="#" onClick={handleClick} key={item["VariableId"]}>
-				<ul className="variables-page__option-title" key={item["VariableId"]}>{item["Variable"]}
-					<li className="variables-page__option-description" >{item["Value"]}</li>
-					<li className="variables-page__id" style={{ display: "none" }}>{item["VariableId"]}</li>
+				<ul className="variables-page__option-title" key={item["VariableId"]}>{filterValue(item["Variable"])}
+					<li className="variables-page__option-description" active="nonActive">{filterValue(item["Value"])}</li>
+					<li className="variables-page__id" style={{ display: "none" }}>{filterValue(item["VariableId"])}</li>
 				</ul>
 			</a>
 		)
@@ -25,7 +32,6 @@ function VariablesPage(props) {
 	function handleClick(e) {
 		varId(e.target.lastChild.innerHTML)
 		setTimeout(() => navigate(`${e.target.lastChild.innerHTML}`), 0)
-
 	}
 
 	return (

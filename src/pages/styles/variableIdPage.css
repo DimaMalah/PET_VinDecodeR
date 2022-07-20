@@ -1,0 +1,14 @@
+.description{
+	font-size: 18px;
+	margin:030px
+}
+@media(max-width:780px){
+	.description{
+		font-size: 14px;
+	}
+}
+@media(max-width:380px){
+	.description{
+		font-size: 12px;
+	}
+}
